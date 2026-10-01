@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Mai ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- =========================
+         MUSIC BUTTON
+    ========================== -->
+
+    <button id="musicBtn" class="music-btn" aria-label="Toggle music">
+        🔇
+    </button>
+
+
+    <!-- =========================
+         OPENING SCREEN
+    ========================== -->
+
+    <section id="opening" class="screen active">
+
+        <div class="opening-content">
+
+            <p class="small-text">
+                I made something special for you...
+            </p>
+
+            <h1>
+                Happy Birthday<br>
+                Mai ❤️
+            </h1>
+
+            <p class="subtitle">
+                Because today is your day ✨
+            </p>
+
+            <button id="startBtn" class="main-btn">
+                Open Your Surprise ♡
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY LETTER
+    ========================== -->
+
+    <section id="letter" class="screen">
+
+        <div class="content">
+
+            <p class="section-label">
+                A little message for you
+            </p>
+
+            <h2>
+                Happy Birthday, Mai
+                <span>❤️</span>
+            </h2>
+
+            <div class="letter-card">
+
+                <p>
+                    Mai,
+                </p>
+
+                <p>
+                    النهارده يوم مميز جدًا...
+                    مش بس لأنه عيد ميلادك،
+                    لكن لأنه اليوم اللي بدأت فيه حكاية شخص
+                    مميز جدًا.
+                </p>
+
+                <p>
+                    أتمنى السنة الجديدة من عمرك تكون
+                    مليانة فرحة ونجاح وضحك،
+                    وتكون أحلى من كل سنة فاتت.
+                </p>
+
+                <p>
+                    وأتمنى كل حاجة نفسك فيها
+                    تلاقي طريقها ليكي،
+                    وتفضلي دايمًا مبتسمة وسعيدة.
+                </p>
+
+                <p class="signature">
+                    With love ❤️
+                </p>
+
+            </div>
+
+            <button class="next-btn" data-next="surprise">
+                Continue ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SURPRISE
+    ========================== -->
+
+    <section id="surprise" class="screen">
+
+        <div class="content">
+
+            <p class="section-label">
+                Just for you
+            </p>
+
+            <h2>
+                A Little Surprise 🎁
+            </h2>
+
+            <div class="gift-container">
+
+                <div class="gift-box">
+
+                    <div class="gift-lid"></div>
+
+                    <div class="gift-body"></div>
+
+                    <div class="gift-ribbon"></div>
+
+                </div>
+
+            </div>
+
+            <p class="surprise-text">
+                I hope this little surprise makes you smile, Mai ❤️
+            </p>
+
+            <button class="next-btn" data-next="wish">
+                One More Thing ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAKE A WISH
+    ========================== -->
+
+    <section id="wish" class="screen">
+
+        <div class="content wish-content">
+
+            <p class="section-label">
+                Make a wish
+            </p>
+
+            <h2>
+                Close your eyes...
+            </h2>
+
+            <p class="wish-instruction">
+                Make a wish and tap the candle 🕯️
+            </p>
+
+
+            <!-- Cake -->
+
+            <div class="cake">
+
+                <!-- Candle -->
+                <button id="candle" class="candle">
+
+                    <div class="flame"></div>
+
+                </button>
+
+                <div class="cake-top"></div>
+
+                <div class="cake-body">
+
+                    <div class="cake-line"></div>
+                    <div class="cake-line"></div>
+
+                </div>
+
+                <div class="plate"></div>
+
+            </div>
+
+
+            <p id="wishHint">
+                Tap the candle to make your wish ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL MESSAGE
+    ========================== -->
+
+    <section id="final" class="screen">
+
+        <div class="content final-content">
+
+            <div class="confetti-symbol">
+                🎉
+            </div>
+
+            <p class="section-label">
+                Your wish has been made
+            </p>
+
+            <h2>
+                Happy Birthday, Mai ❤️
+            </h2>
+
+            <div class="final-message">
+
+                <p>
+                    I hope this year brings you
+                    everything you've been wishing for.
+                </p>
+
+                <p>
+                    Keep smiling,
+                    keep dreaming,
+                    and never forget
+                    how special you are.
+                </p>
+
+                <p class="big-love">
+                    You deserve all the happiness in the world, Mai. ❤️
+                </p>
+
+            </div>
+
+            <div class="final-heart">
+                ♥
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONFETTI
+    ========================== -->
+
+    <div id="confetti-container"></div>
+
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
+
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

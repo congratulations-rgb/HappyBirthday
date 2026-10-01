@@ -1,0 +1,956 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff0f5,
+            #f8dfe8 45%,
+            #efd0dc
+        );
+
+    color: #5a3d47;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    backdrop-filter: blur(10px);
+
+    color: #8e4f65;
+
+    font-size: 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 8px 25px
+        rgba(100, 50, 70, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(100, 50, 70, 0.25);
+}
+
+.music-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+}
+
+.screen.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    width: 100%;
+
+    max-width: 900px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.opening-content {
+    text-align: center;
+
+    max-width: 700px;
+}
+
+
+/* =========================
+   SMALL TEXT
+========================= */
+
+.small-text,
+.section-label {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #9f6879;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(
+            65px,
+            10vw,
+            120px
+        );
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    color: #8e4f65;
+
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            90px
+        );
+
+    font-weight: 400;
+
+    color: #8e4f65;
+
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-size: 18px;
+
+    color: #765560;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.main-btn,
+.next-btn {
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    background: #8e4f65;
+
+    color: white;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            142,
+            79,
+            101,
+            0.25
+        );
+}
+
+.main-btn:hover,
+.next-btn:hover {
+    transform:
+        translateY(-4px);
+
+    background: #753e52;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            142,
+            79,
+            101,
+            0.35
+        );
+}
+
+.next-btn {
+    margin-top: 35px;
+}
+
+
+/* =========================
+   BIRTHDAY LETTER
+========================= */
+
+.letter-card {
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(
+            100,
+            50,
+            70,
+            0.12
+        );
+
+    line-height: 1.9;
+
+    font-size: 16px;
+}
+
+.letter-card p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 30px;
+
+    color: #8e4f65;
+}
+
+
+/* =========================
+   GIFT SURPRISE
+========================= */
+
+.gift-container {
+    height: 200px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.gift-box {
+    position: relative;
+
+    width: 130px;
+    height: 110px;
+
+    animation:
+        giftFloat
+        2s
+        ease-in-out
+        infinite;
+}
+
+.gift-body {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 130px;
+    height: 90px;
+
+    background: #c86c88;
+
+    border-radius: 5px;
+}
+
+.gift-lid {
+    position: absolute;
+
+    top: 5px;
+
+    left: -8px;
+
+    width: 146px;
+    height: 30px;
+
+    background: #a94f6b;
+
+    border-radius: 5px;
+
+    z-index: 2;
+}
+
+.gift-ribbon {
+    position: absolute;
+
+    left: 53px;
+
+    top: 5px;
+
+    width: 25px;
+    height: 105px;
+
+    background: #f8d7e1;
+
+    z-index: 3;
+}
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+.surprise-text {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   WISH SECTION
+========================= */
+
+.wish-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.wish-instruction {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    position: relative;
+
+    width: 260px;
+    height: 240px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   PLATE
+========================= */
+
+.plate {
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 10px;
+
+    width: 240px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 20px
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+}
+
+
+/* =========================
+   CAKE BODY
+========================= */
+
+.cake-body {
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 35px;
+
+    width: 190px;
+    height: 90px;
+
+    border-radius:
+        10px
+        10px
+        18px
+        18px;
+
+    background:
+        linear-gradient(
+            #d9829d,
+            #b95f7d
+        );
+
+    box-shadow:
+        inset 0 -15px
+        rgba(
+            100,
+            40,
+            60,
+            0.12
+        );
+}
+
+
+/* =========================
+   CAKE TOP
+========================= */
+
+.cake-top {
+    position: absolute;
+
+    bottom: 110px;
+
+    left: 35px;
+
+    width: 190px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #f6cbd7;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   CAKE DECORATION
+========================= */
+
+.cake-line {
+    height: 4px;
+
+    width: 140px;
+
+    margin:
+        20px
+        auto
+        0;
+
+    border-radius: 10px;
+
+    background: #efb4c6;
+}
+
+
+/* =========================
+   CANDLE
+========================= */
+
+.candle {
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 145px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 28px;
+    height: 80px;
+
+    border: none;
+
+    border-radius:
+        8px
+        8px
+        4px
+        4px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #ffffff,
+            #ffffff 8px,
+            #e8a6b9 8px,
+            #e8a6b9 15px
+        );
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FLAME
+========================= */
+
+.flame {
+    position: absolute;
+
+    left: 50%;
+
+    top: -42px;
+
+    width: 25px;
+    height: 38px;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    border-radius:
+        50%
+        50%
+        50%
+        0;
+
+    background: #ffb347;
+
+    box-shadow:
+        0 0 25px
+        rgba(
+            255,
+            160,
+            50,
+            0.7
+        );
+
+    animation:
+        flame
+        0.7s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.flame::after {
+    content: "";
+
+    position: absolute;
+
+    width: 11px;
+    height: 18px;
+
+    left: 4px;
+    top: 6px;
+
+    background: #fff1a8;
+
+    border-radius: 50%;
+}
+
+@keyframes flame {
+
+    from {
+        transform:
+            translateX(-50%)
+            rotate(40deg)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            rotate(50deg)
+            scale(1.12);
+    }
+}
+
+
+/* =========================
+   BLOWN CANDLE
+========================= */
+
+.candle.blown .flame {
+    animation: none;
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+}
+
+
+/* =========================
+   SMOKE
+========================= */
+
+.candle.blown::after {
+    content: "";
+
+    position: absolute;
+
+    top: -50px;
+
+    left: 50%;
+
+    width: 12px;
+    height: 35px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(
+                150,
+                150,
+                150,
+                0.4
+            )
+        );
+
+    animation:
+        smoke
+        1.5s
+        ease-out
+        forwards;
+}
+
+@keyframes smoke {
+
+    0% {
+        opacity: 0.8;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(-40px)
+            scale(1.8);
+    }
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-content {
+    animation:
+        finalAppear
+        1s
+        ease;
+}
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.final-message {
+    max-width: 650px;
+
+    margin: auto;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+.final-message p {
+    margin-bottom: 20px;
+}
+
+.big-love {
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size: 32px;
+
+    color: #8e4f65;
+}
+
+.final-heart {
+    font-size: 50px;
+
+    margin-top: 20px;
+
+    animation:
+        heartbeat
+        1.2s
+        infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.2);
+    }
+}
+
+.confetti-symbol {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti-container {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+.confetti {
+    position: absolute;
+
+    width: 10px;
+    height: 16px;
+
+    top: -20px;
+
+    animation:
+        confettiFall
+        3s
+        linear
+        forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .screen {
+        padding: 20px;
+    }
+
+    .music-btn {
+        top: 15px;
+        right: 15px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+
+    h2 {
+        font-size: 55px;
+    }
+
+    .letter-card {
+        padding: 25px;
+
+        font-size: 14px;
+
+        max-height: 55vh;
+
+        overflow-y: auto;
+    }
+
+    .cake {
+        transform:
+            scale(0.85);
+    }
+
+    .final-message {
+        font-size: 15px;
+    }
+
+    .main-btn,
+    .next-btn {
+        padding:
+            13px
+            26px;
+
+        font-size: 14px;
+    }
+}
