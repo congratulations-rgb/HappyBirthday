@@ -14,7 +14,6 @@ html {
 
 body {
     font-family: "Poppins", sans-serif;
-
     overflow: hidden;
 
     background:
@@ -43,11 +42,9 @@ body {
     height: 48px;
 
     border: none;
-
     border-radius: 50%;
 
-    background:
-        rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.75);
 
     backdrop-filter: blur(10px);
 
@@ -56,7 +53,6 @@ body {
     font-size: 20px;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
@@ -65,8 +61,7 @@ body {
     z-index: 1000;
 
     box-shadow:
-        0 8px 25px
-        rgba(100, 50, 70, 0.15);
+        0 8px 25px rgba(100, 50, 70, 0.15);
 
     transition:
         transform 0.3s ease,
@@ -80,8 +75,7 @@ body {
     background: #ffffff;
 
     box-shadow:
-        0 10px 30px
-        rgba(100, 50, 70, 0.25);
+        0 10px 30px rgba(100, 50, 70, 0.25);
 }
 
 .music-btn:active {
@@ -100,6 +94,7 @@ body {
 
     width: 100%;
     height: 100vh;
+    height: 100dvh;
 
     display: flex;
 
@@ -207,6 +202,8 @@ h2 {
             90px
         );
 
+    line-height: 1;
+
     font-weight: 400;
 
     color: #8e4f65;
@@ -280,7 +277,7 @@ h2 {
 }
 
 .next-btn {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 
@@ -905,52 +902,241 @@ h2 {
 @media (max-width: 700px) {
 
     .screen {
-        padding: 20px;
+        padding: 15px;
+
+        overflow-y: auto;
+
+        align-items: center;
     }
 
+
+    /* Music */
+
     .music-btn {
-        top: 15px;
-        right: 15px;
+        top: 12px;
+        right: 12px;
 
-        width: 44px;
-        height: 44px;
+        width: 42px;
+        height: 42px;
 
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+
+    /* Opening */
+
+    .opening-content {
+        width: 100%;
+    }
+
+    .small-text,
+    .section-label {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
     }
 
     h1 {
-        font-size: 65px;
+        font-size: 62px;
+
+        line-height: 0.95;
+
+        margin-bottom: 18px;
     }
 
-    h2 {
-        font-size: 55px;
-    }
-
-    .letter-card {
-        padding: 25px;
-
+    .subtitle {
         font-size: 14px;
 
-        max-height: 55vh;
+        margin-bottom: 25px;
+    }
+
+
+    /* Section headings */
+
+    h2 {
+        font-size: 45px;
+
+        line-height: 1;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* Buttons */
+
+    .main-btn,
+    .next-btn {
+        padding:
+            12px
+            24px;
+
+        font-size: 13px;
+
+        min-height: 46px;
+    }
+
+    .next-btn {
+        margin-top: 18px;
+    }
+
+
+    /* Birthday Letter */
+
+    .letter-card {
+        width: 100%;
+
+        max-width: 500px;
+
+        padding: 18px 20px;
+
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        max-height: 42vh;
 
         overflow-y: auto;
+
+        border-radius: 20px;
+    }
+
+    .letter-card p {
+        margin-bottom: 12px;
+    }
+
+    .signature {
+        font-size: 26px;
+    }
+
+
+    /* Gift */
+
+    .gift-container {
+        height: 160px;
+    }
+
+    .gift-box {
+        transform: scale(0.85);
+
+        animation:
+            giftFloat
+            2s
+            ease-in-out
+            infinite;
+    }
+
+    .surprise-text {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-top: 10px;
+    }
+
+
+    /* Cake */
+
+    .wish-instruction {
+        font-size: 13px;
+
+        margin-bottom: 5px;
     }
 
     .cake {
-        transform:
-            scale(0.85);
+        transform: scale(0.72);
+
+        transform-origin: center;
+
+        margin-top: -5px;
+
+        margin-bottom: -30px;
+    }
+
+    #wishHint {
+        font-size: 13px;
+
+        margin-top: 0;
+    }
+
+
+    /* Final */
+
+    .final-content {
+        width: 100%;
+    }
+
+    .confetti-symbol {
+        font-size: 45px;
+
+        margin-bottom: 5px;
     }
 
     .final-message {
-        font-size: 15px;
+        width: 100%;
+
+        max-width: 500px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .final-message p {
+        margin-bottom: 14px;
+    }
+
+    .big-love {
+        font-size: 27px;
+    }
+
+    .final-heart {
+        font-size: 42px;
+
+        margin-top: 10px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .screen {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 54px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .letter-card {
+        max-height: 40vh;
+
+        padding: 15px;
+
+        font-size: 12px;
     }
 
     .main-btn,
     .next-btn {
         padding:
-            13px
-            26px;
+            11px
+            20px;
 
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .cake {
+        transform: scale(0.65);
+
+        margin-bottom: -45px;
     }
 }
